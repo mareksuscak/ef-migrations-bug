@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201410021358321_Initial.Designer.cs">
       <DependentUpon>201410021358321_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410021402204_ChangePkType.cs" />
+    <Compile Include="Migrations\201410021402204_ChangePkType.Designer.cs">
+      <DependentUpon>201410021402204_ChangePkType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Program.cs" />
@@ -68,6 +72,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201410021358321_Initial.resx">
       <DependentUpon>201410021358321_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410021402204_ChangePkType.resx">
+      <DependentUpon>201410021402204_ChangePkType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

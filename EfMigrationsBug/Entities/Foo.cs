@@ -10,7 +10,7 @@ namespace EfMigrationsBug.Entities
 {
     public class Foo
     {
-        [Key, MaxLength(5)]
-        public string ID { get; set; }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { get; set; }
     }
 }
