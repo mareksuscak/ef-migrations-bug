@@ -7,16 +7,26 @@ namespace EfMigrationsBug.Migrations
     {
         public override void Up()
         {
-            DropPrimaryKey("dbo.Foos");
-            AlterColumn("dbo.Foos", "ID", c => c.Int(nullable: false, identity: true));
-            AddPrimaryKey("dbo.Foos", "ID");
+            DropTable("dbo.Foos");
+            CreateTable(
+                "dbo.Foos",
+                c => new
+                {
+                    ID = c.Int(nullable: false, identity: true),
+                })
+                .PrimaryKey(t => t.ID);
         }
         
         public override void Down()
         {
-            DropPrimaryKey("dbo.Foos");
-            AlterColumn("dbo.Foos", "ID", c => c.String(nullable: false, maxLength: 5));
-            AddPrimaryKey("dbo.Foos", "ID");
+            DropTable("dbo.Foos");
+            CreateTable(
+                "dbo.Foos",
+                c => new
+                {
+                    ID = c.String(nullable: false, maxLength: 5),
+                })
+                .PrimaryKey(t => t.ID);
         }
     }
 }
